@@ -17,6 +17,10 @@ export default {
     sassIncludePaths: [],
     lessIncludePaths: [],
   },
+  
+  app: {
+      entryPoints: ['index.app.js', 'index.vendor.js']
+  },
 
   scripts: {
     src: 'app/**/*.js',
@@ -50,7 +54,7 @@ export default {
   views: {
     index: 'app/index.html',
     src: ['app/controllers/**/*.html', 'app/directives/**/*.html'],
-    dest: 'app/js'
+    dest: 'app'
   },
 
   gzip: {

@@ -17,6 +17,7 @@ import browserSync  from 'browser-sync';
 import debowerify   from 'debowerify';
 import ngAnnotate   from 'browserify-ngannotate';
 import fs           from 'fs';
+import rename       from 'gulp-rename';
 
 function createSourcemap() {
   return !global.isProd || config.browserify.prodSourcemap;
@@ -89,6 +90,7 @@ function buildScript(file) {
         compress: { drop_console: true }
       }))))
       .pipe(gulpif(createSourcemap(), sourcemaps.write(sourceMapLocation)))
+      .pipe(rename(file.replace('index.','')))
       .pipe(gulp.dest(config.scripts.dest))
       .pipe(browserSync.stream());
   }
@@ -98,7 +100,9 @@ function buildScript(file) {
 }
 
 gulp.task('browserify', function() {
-
-  return buildScript('main.js');
+    
+    config.app.entryPoints.forEach(function(entry) {
+      return buildScript(entry);  
+    })
 
 });

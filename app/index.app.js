@@ -1,10 +1,8 @@
-import angular from 'angular';
 
 // angular modules
 import constants from './constants';
 import onConfig  from './config/on_config';
 import onRun     from './config/on_run';
-import 'angular-ui-router';
 import './templates';
 import './filters';
 import './controllers';
