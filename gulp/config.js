@@ -9,24 +9,27 @@ export default {
   buildDir: './www/',
 
   styles: {
-    src: 'app/styles/**/*.scss',
+    sassSrc: ['app/assets/styles/scss/**/*.scss'],
+    lessSrc: ['app/assets/styles/less/**/*.less'],
+    output: 'main.css',
     dest: 'www/css',
     prodSourcemap: false,
-    sassIncludePaths: []
+    sassIncludePaths: [],
+    lessIncludePaths: [],
   },
 
   scripts: {
-    src: 'app/js/**/*.js',
+    src: 'app/**/*.js',
     dest: 'www/js'
   },
 
   images: {
-    src: 'app/images/**/*',
+    src: 'app/assets/images/**/*',
     dest: 'www/images'
   },
 
   fonts: {
-    src: ['app/fonts/**/*'],
+    src: ['app/assets/fonts/**/*'],
     dest: 'www/fonts'
   },
 
@@ -46,7 +49,7 @@ export default {
 
   views: {
     index: 'app/index.html',
-    src: 'app/views/**/*.html',
+    src: ['app/controllers/**/*.html', 'app/directives/**/*.html'],
     dest: 'app/js'
   },
 

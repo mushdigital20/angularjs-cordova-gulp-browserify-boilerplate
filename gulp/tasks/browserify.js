@@ -26,7 +26,7 @@ function createSourcemap() {
 function buildScript(file) {
   
   let bundler = browserify({
-    entries: [config.sourceDir + 'js/' + file],
+    entries: [config.sourceDir + file],
     debug: createSourcemap(),
     cache: {},
     packageCache: {},
@@ -41,7 +41,9 @@ function buildScript(file) {
       gutil.log('Rebundle...');
     });
 
-    loadBrowserPlatform();
+    if ( global.isCordova ) {
+        loadBrowserPlatform();
+    }
   }
 
   function loadBrowserPlatform(){

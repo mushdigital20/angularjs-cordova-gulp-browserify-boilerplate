@@ -12,7 +12,7 @@ const karmaBaseConfig = {
   frameworks: ['jasmine', 'browserify'],
 
   preprocessors: {
-    'app/js/**/*.js': ['browserify', 'coverage']
+    'app/**/*.js': ['browserify', 'coverage']
   },
 
   browsers: ['Chrome'],
@@ -43,7 +43,7 @@ const karmaBaseConfig = {
 
   files: [
     // app-specific code
-    'app/js/main.js',
+    'app/main.js',
 
     // 3rd-party resources
     'node_modules/angular-mocks/angular-mocks.js',

@@ -13,6 +13,7 @@ gulp.task('styles', function () {
 
   const createSourcemap = !global.isProd || config.styles.prodSourcemap;
 
+//TODO: add support for less
   return gulp.src(config.styles.src)
     .pipe(gulpif(createSourcemap, sourcemaps.init()))
     .pipe(sass({

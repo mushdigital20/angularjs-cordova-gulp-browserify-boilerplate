@@ -10,5 +10,6 @@
  */
 
 global.isProd = false;
+global.isCordova = false;
 
 require('./gulp');

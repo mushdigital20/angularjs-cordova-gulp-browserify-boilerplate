@@ -2,8 +2,8 @@ import angular from 'angular';
 
 // angular modules
 import constants from './constants';
-import onConfig  from './on_config';
-import onRun     from './on_run';
+import onConfig  from './config/on_config';
+import onRun     from './config/on_run';
 import 'angular-ui-router';
 import './templates';
 import './filters';
@@ -11,7 +11,7 @@ import './controllers';
 import './services';
 import './directives';
 
-import 'ngCordova';
+//import 'ngCordova';
 
 // create and bootstrap application
 const requires = [
@@ -20,8 +20,8 @@ const requires = [
   'app.filters',
   'app.controllers',
   'app.services',
-  'app.directives',
-  'ngCordova'
+  'app.directives'
+  //'ngCordova'
 ];
 
 // mount on window for testing
